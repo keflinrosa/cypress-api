@@ -22,5 +22,11 @@ jobs:
           paths:
             - ~/.cache
       - run: $(yarn bin)/cypress run --record --key 54fbc85b-ecec-4d15-b2bf-0584f840fd75
+      - run:
+          name: Generate allure report
+          command: |
+              npm install -g allure-commandline
+              allure generate --clean
+          when: always
       - store_artifacts:
           path: ~/repo/cypress-api
