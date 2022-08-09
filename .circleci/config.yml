@@ -21,6 +21,6 @@ jobs:
           key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
             - ~/.cache
-      - run: $(yarn bin)/cypress run --record --key <record_key>
+      - run: $(yarn bin)/cypress run --record --key 54fbc85b-ecec-4d15-b2bf-0584f840fd75
       - store_artifacts:
           path: ~/repo/cypress-api
